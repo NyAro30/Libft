@@ -6,7 +6,7 @@
 /*   By: mny-aro- <mny-aro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 15:00:38 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/01/27 15:35:56 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/01/28 12:09:18 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	count_word(char const *s, char c)
 	return (count);
 }
 
-static char	**free_tab(char **tab, int i)
+static void	**free_tab(char **tab, int i)
 {
 	while (i >= 0)
 	{
@@ -41,7 +41,6 @@ static char	**free_tab(char **tab, int i)
 		i--;
 	}
 	free(tab);
-	return (NULL);
 }
 
 static int	get_word_len(char const *s, char c)
@@ -68,9 +67,9 @@ static char	**fill_tab(char **tab, char const *s, char c, int word_count)
 		if (!tab[i])
 		{
 			erase = free_tab(tab, 1);
-			return (erase);
+			return (NULL);
 		}
-		s += get_word_len(s, c);
+		s += get_word_len(s, c);// ADRESSE DU PROCHAIN MOT
 		i++;
 	}
 	tab[i] = NULL;

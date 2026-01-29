@@ -6,7 +6,7 @@
 /*   By: mny-aro- <mny-aro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 02:17:21 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/01/26 08:42:33 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/01/28 09:46:30 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
-	if (start >= ft_strlen(s))
-		return (ft_strdup(""));
-	if (len == 0)
-		return (ft_strdup(""));
-	if (len > (ft_strlen(s) - start))
-		len = (ft_strlen(s) - start);
 	sub = (char *)malloc((len + 1) * sizeof(char));
 	if (sub == NULL)
 		return (NULL);

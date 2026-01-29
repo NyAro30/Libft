@@ -6,7 +6,7 @@
 /*   By: mny-aro- <mny-aro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 08:42:57 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/01/26 10:18:48 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/01/26 15:51:31 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
-	comp = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2)));
+	comp = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!comp)
 		return (NULL);
 	while (s1[i] != '\0')
