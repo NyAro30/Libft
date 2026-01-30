@@ -6,7 +6,7 @@
 /*   By: mny-aro- <mny-aro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 15:55:37 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/01/27 10:00:50 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/01/29 22:47:10 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,15 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	lendst_libre;
 	size_t	i;
 
+	if (!src || !dst)
+		return (0);
 	i = 0;
 	lensrc = ft_strlen(src);
 	lendst = ft_strlen(dst);
 	if (lendst >= size)
 		return (lensrc + size);
 	lendst_libre = size - (lendst - 1);
-	while (src[i] != '\0' && i < lendst_libre)
+	while (src[i] != '\0' && (lendst + i) < size - 1)
 	{
 		dst[lendst + i] = src[i];
 		i++;

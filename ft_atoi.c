@@ -6,7 +6,7 @@
 /*   By: mny-aro- <mny-aro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 11:10:58 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/01/26 15:30:34 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/01/29 23:09:49 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_atoi(const char *nptr)
 	result = 0;
 	if (!nptr)
 		return (0);
-	if ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
 		i++;
 	if (nptr[i] == '-' || nptr[i] == '+' )
 	{

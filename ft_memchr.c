@@ -6,7 +6,7 @@
 /*   By: mny-aro- <mny-aro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 07:40:01 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/01/23 08:27:09 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/01/29 21:36:49 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
+	size_t			i;
 	unsigned char	*t;
 
+	i = 0;
 	t = (unsigned char *)s;
-	while (n > 0)
+	while (i < n)
 	{
-		if (*t == c)
-			return ((void *)t);
-		t++;
-		n--;
+		if (t[i] == (unsigned char)c)
+			return (&t[i]);
+		i++;
 	}
-	return (NULL);
+	return (0);
 }

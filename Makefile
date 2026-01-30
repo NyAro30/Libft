@@ -1,17 +1,33 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: mny-aro- <mny-aro-@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/01/29 23:36:15 by mny-aro-          #+#    #+#              #
+#    Updated: 2026/01/30 08:15:01 by mny-aro-         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = libft.a
-SRCS = ft_isalpha.c ft_memchr.c ft_split.c ft_strlcpy.c ft_strtrim.c ft_atoi.c ft_isascii.c \
-	ft_memcmp.c ft_strchr.c ft_strlen.c ft_substr.c main.c ft_bzero.c ft_isdigit.c ft_memcpy.c ft_strdup.c ft_strncmp.c ft_tolower.c ft_isprint.c ft_memmove.c ft_strjoin.c ft_strnstr.c ft_toupper.c ft_isalnum.c \
-# 	ft_itoa.c \
-	ft_memset.c ft_strlcat.c ft_strrchr.c libft.h
+SRCS = ft_isalpha.c ft_memchr.c ft_strlcpy.c ft_strtrim.c ft_atoi.c \
+	ft_isascii.c ft_memcmp.c ft_strchr.c ft_strlen.c ft_substr.c \
+	ft_bzero.c ft_isdigit.c ft_memcpy.c ft_strdup.c ft_strncmp.c \
+	ft_tolower.c ft_isprint.c ft_memmove.c ft_strjoin.c ft_strnstr.c \
+	ft_toupper.c ft_isalnum.c ft_calloc.c ft_itoa.c ft_strmapi.c\
+	ft_memset.c ft_strlcat.c ft_strrchr.c ft_split.c ft_striteri.c\
+	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
 HEADER = libft.h
+AR = ar -rcs
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(HEADER)
-	ar -rcs $@ $(OBJS)
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS)
 
 clean:
 	rm -rf $(OBJS)

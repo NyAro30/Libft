@@ -6,7 +6,7 @@
 /*   By: mny-aro- <mny-aro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 10:18:27 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/01/28 07:31:53 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/01/29 22:58:42 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	i = 0;
 	ends1 = ft_strlen(s1);
-	while ((!s1[i]) && ft_strchr(set, s1[i]))
+	while (s1[i] && ft_strchr(set, s1[i]))
 		i++;
 	while (ends1 > i && ft_strchr(set, s1[ends1 - 1]))
 		ends1--;

@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mny-aro- <mny-aro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/22 10:13:00 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/01/30 00:05:55 by mny-aro-         ###   ########.fr       */
+/*   Created: 2026/01/30 08:11:32 by mny-aro-          #+#    #+#             */
+/*   Updated: 2026/01/30 08:52:45 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void ft_putnbr_fd(int n, int fd)
 {
-	size_t		i;
-	char		*str;
-
-	if (!s)
-		return (NULL);
-	i = 0;
-	str = (char *)s;
-	if (c == '\0')
-		return (str + ft_strlen(s));
-	while (str[i])
+	char	c;
+	if (n == -2147483648)
 	{
-		if (str[i] == (char)c)
-			return (str + i);
-		i++;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	return (NULL);
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n = -n;
+		ft_putnbr_fd(n, fd);
+	}
+	else if (n < 10)
+	{
+		c = n + '0';
+		write(fd, &c, 1);
+	}
+	else
+	{
+		ft_putnbr_fd(n /10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
 }

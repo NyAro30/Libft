@@ -6,7 +6,7 @@
 /*   By: mny-aro- <mny-aro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 16:00:21 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/01/22 16:45:59 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/01/30 01:00:20 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ char	*ft_strrchr(const char *s, int c)
 
 	i = 0;
 	v = -1;
+	if (!s)
+		return (NULL);
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			v = i;
 		i++;
 	}
