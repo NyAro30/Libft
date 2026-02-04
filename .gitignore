@@ -1,4 +1,5 @@
+*.o
+*.a
+libft.a
 a.out
-*.gch
-tester/
-tester2/
+.DS_Store

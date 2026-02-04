@@ -6,15 +6,16 @@
 /*   By: mny-aro- <mny-aro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 08:11:32 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/01/30 08:52:45 by mny-aro-         ###   ########.fr       */
+/*   Updated: 2026/02/04 00:23:19 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	char	c;
+
 	if (n == -2147483648)
 	{
 		write(fd, "-2147483648", 11);
@@ -33,7 +34,7 @@ void ft_putnbr_fd(int n, int fd)
 	}
 	else
 	{
-		ft_putnbr_fd(n /10, fd);
+		ft_putnbr_fd(n / 10, fd);
 		ft_putnbr_fd(n % 10, fd);
 	}
 }

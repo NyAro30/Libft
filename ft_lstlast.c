@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mny-aro- <mny-aro-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/31 17:06:36 by mny-aro-          #+#    #+#             */
-/*   Updated: 2026/01/31 17:09:07 by mny-aro-         ###   ########.fr       */
+/*   Created: 2026/02/03 23:21:45 by mny-aro-          #+#    #+#             */
+/*   Updated: 2026/02/04 01:20:40 by mny-aro-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,11 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+	{
+		lst = lst->next;
+	}
+	return (lst);
 }
